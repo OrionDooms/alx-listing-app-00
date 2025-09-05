@@ -1,8 +1,11 @@
+import Card from "@/components/common/Card";
+import { PROPERTYLISTINGSAMPLE } from "@/constants";
 import { BACKGROUND_IMAGE } from "@/constants";
 import Head from "next/head";
 import Pill from "@/components/common/Pill";
 import { FILTER_LABELS } from "@/constants";
 import { useState } from "react";
+
 
 
 export default function Home() {
@@ -41,6 +44,16 @@ export default function Home() {
           ))}
         </div>
       </section>
+      <section className="px-4 py-8 max-w-7xl mx-auto">
+        <h2 className="text-2xl font-semibold mb-6">Available Properties</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {PROPERTYLISTINGSAMPLE.map((property, index) => (
+            <Card
+              key={index}
+              property={property} />
+          ))}
+        </div>
+      </section>
     </>
   );
-}
+};
